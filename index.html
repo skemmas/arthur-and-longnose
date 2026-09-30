@@ -1,49 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>arthur-and-longnose | Live</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Arthur & Longnose</title>
+  <meta name="description" content="Arthur and Longnose go where everyone else stops looking. Diamond hands and long conviction on Solana.">
+  <meta name="theme-color" content="#F3EEDB">
+  <link rel="icon" type="image/png" href="/longnose.png">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arthur & Longnose">
+  <meta property="og:title" content="Arthur & Longnose">
+  <meta property="og:description" content="arthur and longnose go where everyone else stops looking.">
+  <meta property="og:image" content="/longnose.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arthur & Longnose">
+  <meta name="twitter:description" content="arthur and longnose go where everyone else stops looking.">
+  <meta name="twitter:image" content="/longnose.png">
+
+  <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <script>document.documentElement.className += " js";</script>
 </head>
-<body class="bg-slate-950 text-white min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.25),rgba(255,255,255,0))]"></div>
-  
-  <header class="max-w-6xl mx-auto w-full px-6 py-8 flex justify-between items-center">
-    <div class="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
-      ARTHUR-AND-LONGNOSE
+<body>
+
+  <!-- Top Minimalist Bar -->
+  <header class="topbar">
+    <div class="brand-section">
+      <span class="brand-title">Arthur & Longnose</span>
+      <span class="brand-badge">$ARTHUR &bull; $LONG</span>
     </div>
-    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-      Online on Vercel
-    </span>
+
+    <!-- Contract Address Bar (Click to Copy) -->
+    <div class="ca-bar" id="caBar" title="Click to copy Contract Address">
+      <span class="ca-label">CA:</span>
+      <span class="ca-value" id="caText" data-ca="ARTHURxLONGNOSE7xHqZ3kM8p9vD2wB1sY5tCuS1pump">ARTH...pump</span>
+      <span class="ca-copy-indicator" id="caCopyIndicator">COPY</span>
+    </div>
+
+    <!-- Controls & Socials -->
+    <div class="top-actions">
+      <!-- Character View Tabs -->
+      <div class="character-tabs" role="tablist">
+        <button class="tab-btn is-active" data-mode="duo" title="View Arthur and Longnose together">TOGETHER</button>
+        <button class="tab-btn" data-mode="arthur" title="Focus Arthur">ARTHUR</button>
+        <button class="tab-btn" data-mode="longnose" title="Focus Longnose">LONGNOSE</button>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Twitter / X">X</a>
+        <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-btn" title="Telegram">TG</a>
+        <a href="https://pump.fun" target="_blank" rel="noopener noreferrer" class="social-btn" title="Pump.fun">PUMP</a>
+        <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="DexScreener">DEX</a>
+      </div>
+    </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-6 py-20 text-center flex-1 flex flex-col items-center justify-center">
-    <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight mb-6">
-      Built for <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">Instant Speed</span>.
-    </h1>
-    <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mb-10">
-      arthur-and-longnose is deployed and connected. Rapid production pipeline verified.
-    </p>
-    <div class="flex gap-4">
-      <a href="#explore" class="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition-all shadow-lg shadow-cyan-500/20">
-        Get Started
-      </a>
-      <a href="https://github.com" target="_blank" class="px-6 py-3 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 transition-all">
-        View Source
-      </a>
+  <!-- Main Stage -->
+  <main class="stage">
+
+    <!-- Figure Container: Arthur and Longnose -->
+    <div class="figure-container mode-duo" id="figureContainer">
+      <!-- Arthur Card -->
+      <div class="char-card" id="charArthur" title="Click Arthur for diamond conviction">
+        <div class="speech-bubble" id="speechArthur">Arthur: Diamond hands never fold.</div>
+        <img class="char-img char-arthur" src="/arthur.png" width="300" height="300" draggable="false"
+             alt="Arthur the aardvark with diamond hands in front of the trees">
+      </div>
+
+      <!-- Longnose Card -->
+      <div class="char-card" id="charLongnose" title="Click Longnose to sniff the meta">
+        <div class="speech-bubble" id="speechLongnose">Longnose: I smell 3am liquidity.</div>
+        <img class="char-img char-longnose" src="/longnose.png" width="300" height="300" draggable="false"
+             alt="Longnose character holding a large gold $LONG coin">
+      </div>
     </div>
+
+    <!-- Crawl Narrative (Smooth Infinite Web Animations API Crawl) -->
+    <div class="crawl" id="crawl" tabindex="0" aria-label="scrolling narrative text">
+      <div class="crawl-text" id="crawlText">
+        <p class="quote-highlight">arthur and longnose go where everyone else stops looking</p>
+        <p>the internet moves fast</p>
+        <p>narratives come and go in forty-eight minutes</p>
+        <p>everyone wants the next thing before the current thing has even settled into memory</p>
+        <p>everyone is chasing the fifteen-minute retirement</p>
+        <p>arthur stands quietly in the grass</p>
+        <p>his yellow sweater hasn't faded since 1996</p>
+        <p>his round spectacles see right through the noise</p>
+        <p>and his hands have compressed under the weight of ten thousand red candles into pure, unbreakable diamond</p>
+        <p class="divider-line">&bull; &bull; &bull;</p>
+        <p>beside him, longnose keeps wandering</p>
+        <p>through telegram chats</p>
+        <p>strange websites</p>
+        <p>abandoned repositories</p>
+        <p>old links</p>
+        <p>new memes</p>
+        <p>solana trenches</p>
+        <p>and whatever weird thing somebody decided to build at 3am because they had too much cold coffee and an open terminal</p>
+        <p>why an aardvark and a creature with a nose like an arrow?</p>
+        <p>because an aardvark doesn't care about the wind floating across the canopy</p>
+        <p>he digs</p>
+        <p>he puts his snout down and digs through the dry gravel until he hits subterranean bedrock</p>
+        <p>and longnose doesn't have a long nose to show off</p>
+        <p>the nose is an antenna for truth</p>
+        <p>it catches the scent of genuine culture long before the crowd arrives</p>
+        <p>it smells the panic of the quick flip</p>
+        <p>and it smells the quiet, stubborn beauty of the long hold</p>
+        <p class="divider-line">&bull; &bull; &bull;</p>
+        <p class="quote-highlight">most people on the timeline are playing the shortest game imaginable</p>
+        <p>next tweet</p>
+        <p>next trade</p>
+        <p>next narrative</p>
+        <p>next five-minute candle</p>
+        <p>next dopamine hit</p>
+        <p>everyone is staring at the tick chart waiting for the universe to validate them in seconds</p>
+        <p>arthur was there when the red wick was thirty miles long</p>
+        <p>he didn't check his portfolio</p>
+        <p>he didn't panic-post a thread on x</p>
+        <p>he simply clenched his fists tighter</p>
+        <p>the sheer atmospheric pressure of internet despair compressed the carbon</p>
+        <p>until out came diamonds</p>
+        <p>unbreakable</p>
+        <p>flawless</p>
+        <p>immune to the noise</p>
+        <p>and beside him sits longnose</p>
+        <p>black hoodie zipped</p>
+        <p>sunglasses perched on the cap brim even though the sun went down seven hours ago</p>
+        <p>flipping his golden coin into the air</p>
+        <p>asking one simple question:</p>
+        <p class="quote-highlight">are you here for the flick of a lightswitch, or are you here for the culture?</p>
+        <p class="divider-line">&bull; &bull; &bull;</p>
+        <p>crypto spent a decade trying to convince everyone it was Wall Street in hoodies</p>
+        <p>governance tokens</p>
+        <p>algorithmic infrastructure</p>
+        <p>institutional liquidity frameworks</p>
+        <p>cross-chain synthetic derivative matrices</p>
+        <p>and somewhere along the way people forgot the single most basic human truth:</p>
+        <p>people come to the internet because they want to have fun</p>
+        <p>they want to discover weird artifacts</p>
+        <p>they want to find other people who share their exact brand of glorious insanity</p>
+        <p>they want to participate</p>
+        <p>they want to make things</p>
+        <p>and sometimes they want to put 0.2 sol into an aardvark with diamond knuckles and a snout because it made them smile at 4am</p>
+        <p>you cannot spreadsheet that</p>
+        <p>you cannot manufacture it in a boardroom</p>
+        <p>you cannot fake culture for very long</p>
+        <p class="divider-line">&bull; &bull; &bull;</p>
+        <p class="quote-highlight">memecoins understand this better than almost anything else in crypto</p>
+        <p>a memecoin starts with nothing</p>
+        <p>a drawing</p>
+        <p>a joke</p>
+        <p>a character</p>
+        <p>a strange minimal webpage with a monospace font</p>
+        <p>a telegram room with seven strangers</p>
+        <p>and suddenly people begin building</p>
+        <p>someone makes music</p>
+        <p>someone creates animation</p>
+        <p>someone designs stickers</p>
+        <p>someone stays awake all night explaining the lore to people who joined eight minutes ago</p>
+        <p>and before you know it you don't just have a token anymore</p>
+        <p>you have a living, breathing piece of internet folklore</p>
+        <p>solana changed the atmosphere because friction vanished</p>
+        <p>fast</p>
+        <p>cheap</p>
+        <p>immediate</p>
+        <p>you tap a button and it actually happens</p>
+        <p>and when friction disappears, human creativity explodes into thousands of strange directions</p>
+        <p>pump.fun pushed that reality to its logical extreme:</p>
+        <p>what if creating a coin became as frictionless as posting a tweet?</p>
+        <p>the barrier between a silly idea and an onchain community completely dissolved</p>
+        <p>most coins will fade into the background</p>
+        <p>that has always been the nature of the internet</p>
+        <p>99% of youtube videos get twenty views</p>
+        <p>99% of tweets disappear into the void</p>
+        <p>99% of websites are forgotten</p>
+        <p>but creators don't stop creating</p>
+        <p>because creation is the entire point</p>
+        <p class="divider-line">&bull; &bull; &bull;</p>
+        <p class="quote-highlight">arthur and longnose are going long on the creators</p>
+        <p>going long on the weirdos</p>
+        <p>going long on the artists</p>
+        <p>going long on the traders sitting in voice chat at 5am posting increasingly incomprehensible memes</p>
+        <p>going long on the builder making a website that looks like an old CRT monitor</p>
+        <p>going long on the patience that terrifies the crowd</p>
+        <p>because the things that look the most absurd at the beginning are often the only things remembered at the end</p>
+        <p class="divider-line">&bull; &bull; &bull;</p>
+        <p class="quote-highlight">hold your ground</p>
+        <p class="quote-highlight">sharpen your snout</p>
+        <p class="quote-highlight">stay long</p>
+        <p class="quote-highlight">stay diamond</p>
+      </div>
+    </div>
+
+    <div class="scroll-hint">[ drag or space to pause &bull; click characters for quotes ]</div>
   </main>
 
-  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
-    &copy; 2026 arthur-and-longnose. Generated with PumpSites.
-  </footer>
+  <!-- Audio Player (1-Bit Retro Style) -->
+  <div class="player" id="player" role="group" aria-label="ambient audio player">
+    <button class="btn btn-play" id="playBtn" type="button" aria-label="play">
+      <svg class="icon icon-play" viewBox="0 0 14 14" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+        <path d="M3 1h2v12H3zM5 2h2v10H5zM7 3h2v8H7zM9 4h2v6H9zM11 5h1v4h-1zM12 6h1v2h-1z"/>
+      </svg>
+      <svg class="icon icon-pause" viewBox="0 0 14 14" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+        <path d="M3 2h3v10H3zM8 2h3v10H8z"/>
+      </svg>
+    </button>
+
+    <div class="slider slider-seek" id="seek" role="slider" tabindex="0"
+         aria-label="seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="slider-track"><div class="slider-fill"></div></div>
+      <div class="slider-thumb"></div>
+    </div>
+
+    <button class="btn btn-mute" id="muteBtn" type="button" aria-label="mute">
+      <svg class="icon icon-vol" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+        <path d="M2 6h3v4H2zM5 5h2v6H5zM7 3h2v10H7zM10 5h1v1h-1zM11 6h1v4h-1zM10 10h1v1h-1zM12 3h1v1h-1zM13 4h1v8h-1zM12 12h1v1h-1z"/>
+      </svg>
+      <svg class="icon icon-muted" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+        <path d="M2 6h3v4H2zM5 5h2v6H5zM7 3h2v10H7zM10 5h1v1h-1zM11 6h1v1h-1zM12 7h2v2h-2zM14 9h1v1h-1zM15 10h1v1h-1zM15 5h1v1h-1zM14 6h1v1h-1zM11 9h1v1h-1zM10 10h1v1h-1z"/>
+      </svg>
+    </button>
+
+    <div class="slider slider-vol" id="vol" role="slider" tabindex="0"
+         aria-label="volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+      <div class="slider-track"><div class="slider-fill"></div></div>
+      <div class="slider-thumb"></div>
+    </div>
+  </div>
+
+  <audio id="audio" src="/music.mp3" preload="metadata" loop></audio>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
